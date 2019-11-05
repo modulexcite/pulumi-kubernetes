@@ -542,7 +542,7 @@ func (o NetworkPolicyListTypeOutput) Metadata() metav1.ListMetaPtrOutput {
 	return o.ApplyT(func(v NetworkPolicyListType) *metav1.ListMeta { return v.Metadata }).(metav1.ListMetaPtrOutput)
 }
 
-// NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
+// NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of fields are allowed
 type NetworkPolicyPeer struct {
 	// IPBlock defines policy on a particular IPBlock. If this field is set then neither of the other fields can be.
 	IpBlock *IPBlock `pulumi:"ipBlock"`
@@ -563,7 +563,7 @@ type NetworkPolicyPeerInput interface {
 	ToNetworkPolicyPeerOutputWithContext(context.Context) NetworkPolicyPeerOutput
 }
 
-// NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
+// NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of fields are allowed
 type NetworkPolicyPeerArgs struct {
 	// IPBlock defines policy on a particular IPBlock. If this field is set then neither of the other fields can be.
 	IpBlock IPBlockPtrInput `pulumi:"ipBlock"`
@@ -610,7 +610,7 @@ func (i NetworkPolicyPeerArray) ToNetworkPolicyPeerArrayOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(NetworkPolicyPeerArrayOutput)
 }
 
-// NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields are allowed
+// NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of fields are allowed
 type NetworkPolicyPeerOutput struct{ *pulumi.OutputState }
 
 func (NetworkPolicyPeerOutput) ElementType() reflect.Type {

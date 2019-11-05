@@ -13695,7 +13695,7 @@ type NodeSystemInfo struct {
 	OperatingSystem *string `pulumi:"operatingSystem"`
 	// OS Image reported by the node from /etc/os-release (e.g. Debian GNU/Linux 7 (wheezy)).
 	OsImage *string `pulumi:"osImage"`
-	// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html
+	// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
 	SystemUUID *string `pulumi:"systemUUID"`
 }
 
@@ -13726,7 +13726,7 @@ type NodeSystemInfoArgs struct {
 	OperatingSystem pulumi.StringPtrInput `pulumi:"operatingSystem"`
 	// OS Image reported by the node from /etc/os-release (e.g. Debian GNU/Linux 7 (wheezy)).
 	OsImage pulumi.StringPtrInput `pulumi:"osImage"`
-	// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html
+	// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
 	SystemUUID pulumi.StringPtrInput `pulumi:"systemUUID"`
 }
 
@@ -13845,7 +13845,7 @@ func (o NodeSystemInfoOutput) OsImage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeSystemInfo) *string { return v.OsImage }).(pulumi.StringPtrOutput)
 }
 
-// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html
+// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
 func (o NodeSystemInfoOutput) SystemUUID() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeSystemInfo) *string { return v.SystemUUID }).(pulumi.StringPtrOutput)
 }
@@ -13913,7 +13913,7 @@ func (o NodeSystemInfoPtrOutput) OsImage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeSystemInfo) *string { return v.OsImage }).(pulumi.StringPtrOutput)
 }
 
-// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html
+// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
 func (o NodeSystemInfoPtrOutput) SystemUUID() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodeSystemInfo) *string { return v.SystemUUID }).(pulumi.StringPtrOutput)
 }

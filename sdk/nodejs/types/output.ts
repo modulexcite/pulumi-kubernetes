@@ -12725,7 +12725,7 @@ export namespace core {
       /**
        * SystemUUID reported by the node. For unique machine identification MachineID is preferred.
        * This field is specific to Red Hat hosts
-       * https://access.redhat.com/documentation/en-US/Red_Hat_Subscription_Management/1/html/RHSM/getting-system-uuid.html
+       * https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
        */
       readonly systemUUID: string
 
@@ -19881,8 +19881,8 @@ export namespace networking {
     }
 
     /**
-     * NetworkPolicyPeer describes a peer to allow traffic from. Only certain combinations of fields
-     * are allowed
+     * NetworkPolicyPeer describes a peer to allow traffic to/from. Only certain combinations of
+     * fields are allowed
      */
     export interface NetworkPolicyPeer {
       /**
