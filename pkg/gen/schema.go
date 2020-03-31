@@ -209,6 +209,9 @@ func PulumiSchema(swagger map[string]interface{}) pschema.PackageSpec {
 		"moduleToPackage":      modToPkg,
 		"packageImportAliases": pkgImportAliases,
 	})
+	pkg.Language["nodejs"] = rawMessage(map[string]interface{}{
+		"moduleToPackage":      modToPkg,
+	})
 
 	return pkg
 }
