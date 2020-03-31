@@ -153,7 +153,7 @@ func PulumiSchema(swagger map[string]interface{}) pschema.PackageSpec {
 					kind.schemaPkgName, "/", "", -1)
 
 				objectSpec := pschema.ObjectTypeSpec{
-					Description: kind.Comment(),
+					Description: kind.Comment()+kind.PulumiComment(),
 					Type:        "object",
 					Properties:  map[string]pschema.PropertySpec{},
 				}
