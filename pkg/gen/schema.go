@@ -153,7 +153,7 @@ func PulumiSchema(swagger map[string]interface{}) pschema.PackageSpec {
 					kind.schemaPkgName, "/", "", -1)
 
 				objectSpec := pschema.ObjectTypeSpec{
-					Description: kind.Comment()+kind.PulumiComment(),
+					Description: kind.Comment() + kind.PulumiComment(),
 					Type:        "object",
 					Properties:  map[string]pschema.PropertySpec{},
 				}
@@ -210,7 +210,7 @@ func PulumiSchema(swagger map[string]interface{}) pschema.PackageSpec {
 		"packageImportAliases": pkgImportAliases,
 	})
 	pkg.Language["nodejs"] = rawMessage(map[string]interface{}{
-		"moduleToPackage":      modToPkg,
+		"moduleToPackage": modToPkg,
 	})
 
 	return pkg
@@ -221,7 +221,7 @@ func genPropertySpec(p Property, resourceGV string, resourceKind string) pschema
 	err := json.Unmarshal([]byte(p.ProviderType()), &typ)
 	contract.Assert(err == nil)
 
-	defaultValue := func() *string {
+	constValue := func() *string {
 		if p.name == "apiVersion" {
 			if strings.HasPrefix(resourceGV, "core/") {
 				dv := strings.TrimPrefix(resourceGV, "core/")
@@ -235,10 +235,17 @@ func genPropertySpec(p Property, resourceGV string, resourceKind string) pschema
 
 		return nil
 	}
+	defaultValue := func() *string {
+
+		return nil
+	}
 
 	propertySpec := pschema.PropertySpec{
 		Description: p.Comment(),
 		TypeSpec:    typ,
+	}
+	if cv := constValue(); cv != nil {
+		propertySpec.Const = *cv
 	}
 	if dv := defaultValue(); dv != nil {
 		propertySpec.Default = *dv
